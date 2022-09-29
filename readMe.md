@@ -10,4 +10,4 @@ https://selenium-python.readthedocs.io/locating-elements.html
 
 note selenum of python need html to work, if a site does not use html, this will not work.
 
-Thank you taking time
+Thank you taking time and dedication 
