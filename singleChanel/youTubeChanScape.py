@@ -1,14 +1,25 @@
 import time #to use seelp if you want to slow down the progreession a point
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
 from selenium import webdriver
 import pandas as pd #imprts data into a data frame, making exporting a lot easier
 
 url = "https://www.youtube.com/c/CyberpunkGame/videos"
 
 driver= webdriver.Chrome()
-# r"C:\Users\16075\Documents\work\ScapeDynamic\chromedriver.exe"
+# r"C:\Users\16075\Documents\work\automationScrap\chromedriver.exe"
 driver.get(url)
 
+SCROLL_PAUSE_TIME = 2
+num=0
+while num <=2:#give me the data of x number of page pages
+    
+    down = driver.find_element(By.TAG_NAME,'html')
+    down.send_keys(Keys.END)
+    # Wait to load page content
+    time.sleep(SCROLL_PAUSE_TIME)
+
+    num+=1
 
 # style-scope ytd-grid-video-renderer
 # #above line is classname of div which hold inside all the following paths below
@@ -34,6 +45,7 @@ for video in videos:
     video_list.append(vid_item)
     
 dataFrame = pd.DataFrame(video_list)
+
 print(dataFrame)
 # print(video_list)
 driver.quit()

@@ -9,7 +9,7 @@ from selenium.webdriver.support import expected_conditions as EC
 
 
 url = "https://www.youtube.com/results?search_query=god+of+war"
-driver = webdriver.Chrome()
+driver = webdriver.Chrome()#same directory no need for a path
 driver.get(url)
 num=0
 
